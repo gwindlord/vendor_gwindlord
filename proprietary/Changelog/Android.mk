@@ -1,4 +1,4 @@
 LOCAL_PATH:= $(call my-dir)
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/changelog.txt:system/etc/changelog.txt
+include $(CLEAR_VARS)
+$(shell cp -rf $(LOCAL_PATH)/changelog.txt $(TARGET_OUT)/etc/changelog.txt)
