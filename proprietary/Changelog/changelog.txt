@@ -1,0 +1,122 @@
+android_device_oneplus_bacon:
+  * added more parameters for Fluence and wideband
+  * bacon: Add missing F2FS flag
+  * seems speaker volume is still low, increased a bit
+
+===============================================
+
+android_vendor_gwindlord:
+  * added changelog :)
+
+===============================================
+
+android_kernel_oneplus_msm8974:
+  * msm: camera: Fix erroneous ref_count decrements in CCI error path
+  * msm: camera: Ensure CCI wakelock is always removed
+  * ARM: dts: 14001: Fix overexposure when capturing photos with flash
+  * bl: lm3630: Import from upstream cm-13.0 branch
+  * bl: lm3630: Always disable PWM mode
+
+===============================================
+
+caf_chromium_m46_build:
+  * removed non-working configurations from WebRefiner config
+  * Check for null before setting the statusbar color
+  * Disallow scripting earlier in LocalFrame::detach()
+  * Drop IPCs that come in after destruction time
+  * Fix an overflow in WebCursor
+  * Make use of channel setup/teardown functions symmetric in ChildProcessHostImpl
+  * AppCache: Use WeakPtr<> to fix a potential uaf bug
+  * Fix possible map::end() dereference in AppCacheUpdateJob triggered by a compromised renderer
+  * LocalFrame reference is protected during FrameLoader::init
+  * Fix an optimisation in ContainerNode::notifyNodeInsertedInternal
+  * Fix a potential heap use after free in BookmarkAppHelper
+  * Defer widget updates in ContainerNode::parserRemoveChild
+  * Fix invalid cast in chrome_extensions_network_delegate.cc
+  * Fix invalid address in site settings
+  * src/breakpad/src 2de98 Android: Workaround for ftruncate() issues
+  * CFI: avoid a bad cast in InsertBeforeMany
+  * Output non-browser crash minidump paths to logcat
+  * Update to libpng 1.2.52
+
+===============================================
+
+packages_apps_Dialer:
+  * 0118 999 881 999 119 725 3 : The IT Crowd rocks! \m/
+
+===============================================
+
+packages_apps_SnapdragonCamera
+  * Forked SnapdragonCamera into my own repo and merged there commits from LA.BR.1.2.5_rb2.28 CAF branch
+  * Added front cam RAW shooting (has some green tint in dark areas unforunately :( but it can be removed at post-production)
+  * Added noise matrix from FreeDCam - should make quality a bit better
+  * Fixed RAW photo orientation
+  * Fixed FC when the device RAW profile is unknown
+  * Now there is no original RAW saved, only DNG remains
+  * Fixed resolution a bit
+  * Setting ISO from specified mode - cannot read the actual value from photo
+  * Removed unnecessary code lines from grids
+
+===============================================
+
+bootable_recovery:
+  * Fix integer overflows in recovery procedure
+
+===============================================
+
+android_build:
+  * Updating security string patch to 2016-04-01
+  * "LMY49J"
+
+===============================================
+
+android_external_dhcpcd:
+  * Improve length checks in DHCP Options parsing of dhcpcd
+
+===============================================
+
+android_external_skia:
+  * Update SK_CRASH to default to abort(). DO NOT MERGE
+
+===============================================
+
+frameworks_av:
+  * Get service by value instead of reference
+  * Also fix out of bounds access for normal read
+  * Clear allocation to avoid info leak
+  * IOMX.cpp uninitialized pointer in BnOMX::onTransact
+
+===============================================
+
+frameworks_base:
+  * NPE fix for SyncStorageEngine read authority am: a962d9eba7 am: 339c4f2b05 am: 58048c1f17
+  * Redact Account info from getCurrentSyncs
+
+===============================================
+
+frameworks_native:
+  * Add SN logging
+  * Sanity check IMemory access versus underlying mmap
+  * BQ: Add permission check to BufferQueueConsumer::dump
+
+===============================================
+
+platform_libcore:
+  * GCMParameters: check that the default tag size is secure (16 bits)
+
+===============================================
+
+packages_providers_DownloadProvider:
+  * Use resolved path for both checking and opening
+
+===============================================
+
+packages_services_Telecomm:
+  * Created as manual cherry-pick for http://ag/866007 to lmp-mr1-release
+  * DO NOT MERGE - Restrict ability to add call based on device provision status
+
+===============================================
+
+android_system_core:
+  * Don't create tombstone directory
+
