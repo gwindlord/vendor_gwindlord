@@ -1,154 +1,56 @@
-android_build:
-  * Updating security string patch to 2016-05-01
-
-===============================================
-
-external_aac:
-  * Fix stack corruption happening in aacDecoder_drcExtractAndMap()
-
-===============================================
-
-external_flac:
-  * Avoid free-before-initialize vulnerability in heap
-
-===============================================
-
-system_core:
-  * Don't demangle symbol names.
-
-===============================================
-
-external_bluetooth_bluedroid:
-  * DO NOT MERGE Check size of pin before replying
-
-===============================================
-
-frameworks_native:
-  * Fix issue #27252896: Security Vulnerability -- weak binder
-  * BQ: fix some uninitialized variables
-
-===============================================
-
-external_wpa_supplicant_8:
-  * Remove newlines from config output
-  * Guard against return value already being null
-
-===============================================
-
-frameworks_av:
-  * NuPlayerStreamListener: NULL and bounds check before memcpy
-  * Camera3Device: Validate template ID
-  * codecs: check OMX buffer size before use in VP8 encoder.
-  * Add VPX output buffer size check
-  * SoftAMR: check output buffer size to avoid overflow.
-  * SoftAMR: check input buffer size to avoid overflow.
-  * Fix AMR decoder
-
-===============================================
-
-packages_apps_UnifiedEmail:
-  * Don't allow cachedFile Attachments if the content Uri is pointing to EmailProvider.
-
-===============================================
-
-packages_apps_Email:
-  * Don't allow cachedFile Attachments if the content Uri is pointing to EmailProvider.
-
-===============================================
-
-external_openssl:
-  * Remove broken DSA private key workarounds.
-
-===============================================
-
-android_packages_apps_Snap:
-  * Snap: Don't place HDR top-view icon next to scene icon
-  * Merge branch 'cm-13.0' of https://github.com/CyanogenMod/android_packages_apps_Snap.git
-  * Enable manual focus for OPO 
-  * Adding 'Focus Before Shot' option
-  * Adding icons to items, which missing it
-  * Snap: Lock screen orientation to portrait for secure cam activity
-  * Fix and Add more photo resolutions
-  * Fixing RAW resolution
-  * Automatic translation import 
-  * Snap: Support override maker and model exif tag
-  * Snap: Only set preferred preview sizes if they are valid
-
-===============================================
-
 caf_chromium_m46_build:
-  * Update breakpad to report the tip commit
-  * Add localization for application name
-  * Changed bitmap for bookmark widget
-  * Keep SslCertificate class in proguard flags
-  * Skip partial composition when full surface is being cleared
-  * Added V8 distribution package version K.1.7 (pgo)
+  * Fix color filter on FAB search icon
+  * Rename data dir, migrate bookmarks and homepage
+  * Changed logic for chrome://version fields
+  * Fix license markings
+  * Migrate Default Search Engine Preference
+  * Migrate Power Save Mode preferences
+  * Roll DEPS WebRefiner-2.1.8
+  * Roll DEPS swe-core 3.0.0
 
 ===============================================
 
 android_kernel_oneplus_msm8974:
-  * hid: Add driver for FiiO USB DAC
-  * Merge branch 'LA.BF.1.1.3_rb1.13' of git://codeaurora.org/quic/la/kernel/msm into cm-13.0-caf
-  * Revert "ASoC: wcd9320: Wait a little longer for HPH PA to settle"
-  * cpu_input_boost: Remove unnecessary kzallocs
-  * power: bq27541: Remove unnecessary kzalloc 
-  * msm: thermal: simple: Refactor code style
-  * msm: thermal: simple: Add support for 8 thermal throttle zones
-  * msm: kgsl: Fix direct references to HZ
-  * msm: thermal: simple: Refactor code style
-  * msm: thermal: simple: Use fixed-width integer types for local variables 
-  * msm: thermal: simple: Remove unnecessary continue
-  * cpu_input_boost: Use fixed-width integer types for local variables
-  * ALSA: hrtimer: Fix stall by hrtimer_cancel()
-  * pipe: limit the per-user amount of pages allocated in pipes
-  * ALSA: timer: Harden slave timer list handling
-  * ALSA: timer: Fix race among timer ioctls
-  * ALSA: timer: Fix double unlink of active_list
-  * ALSA: usb-audio: avoid freeing umidi object twice
+  * prima: Update to CAF LA.BF.1.1.3_rb1.13
+  * ASoC: msm: qdsp6v2: add integer overflow check
+  * msm: kgsl: Fix idle timer sysfs after removing references to HZ
+  * sched_clock: Make ARM's sched_clock generic for all architectures 
+  * ARM: sched_clock: Load cycle count after epoch stabilizes
+  * clocksource: Extract max nsec calculation into separate function
+  * sched_clock: Use seqcount instead of rolling our own
+  * sched_clock: Use an hrtimer instead of timer
+  * sched_clock: Add support for >32 bit sched_clock 
+  * arm: arch_timer: Update for 64bit sched_clock
+  * sched_clock: Avoid corrupting hrtimer tree during suspend 
+  * bacon_defconfig: Set CONFIG_HZ to 300 
+  * msm: thermal: simple: Fix lack of throttling when temp suddenly jumps
+  * sysrq: Emergency Remount R/O in reverse order 
+  * msm: clock-krait-8974: Clean up underclock code
+  * mmc: clk_scaling: Fix scale_down_in_low_wr_load sysfs return value
+  * ALSA: timer: Fix leak in SNDRV_TIMER_IOCTL_PARAMS
+  * ALSA: timer: Fix leak in events via snd_timer_user_ccallback
+  * ALSA: timer: Fix leak in events via snd_timer_user_tinterrupt
+  * netfilter: x_tables: check for size overflow
+  * ppp: take reference on channels netns
 
 ===============================================
 
 android_device_oneplus_bacon:
-  * bacon: Disable VoIP offload
-  * bacon: Don't end up on ULL for media playback
+  * bacon: Enable DRM service for Media Scanner
+  * bacon: set BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET and USE_DEVICE_SPECIFIC_GPS
+  * bacon: Add missing ULL usecases
+  * bacon: Add RAW and FAST path on primary output
+  * Revert "bacon: Don't offload PCM formats"
+  * Taking "Slimfy", Cortex 4.9 GCC and unused warnings suppress from SlimRoms instead of YoshiShaPow
+
+===============================================
+
+android_hardware_ril-caf:
+  * ril: Use CLOCK_BOOTTIME instead of CLOCK_MONOTONIC
 
 ===============================================
 
 android_device_oppo_msm8974-common:
-  * bacon: Disable VoIP offload
-  * bacon: Update thermal configuration for new 8-zone driver
-
-===============================================
-
-packages_apps_NovaLauncher:
-  * Nova Launcher updated to version 4.3.1
-
-===============================================
-
-packages_apps_Settings:
-  * Settings: restore proper live display color profile
-
-===============================================
-
-frameworks_base:
-  * RemoteController: extract interface conflicting with CTS test (1/2)
-  * Disallow guest user from changing Wifi settings
-
-===============================================
-
-packages_apps_Bluetooth:
-  * Bluetooth: split out AVRCP remote interfaces (2/2)
-
-===============================================
-
-packages_apps_InCallUI:
-  * IncallUI: Screen doesn't wakeup after MT/MO call disconnect
-
-===============================================
-
-android_hardware_qcom_media:
-  * mm-video-v4l2: vdec: add safety checks for freeing buffers
-  * mm-video-v4l2: vidc: validate omx param/config data
-  * mm-video-v4l2: venc: add safety checks for freeing buffers
-  * mm-video-v4l2: vdec: deprecate unused config OMX_IndexVendorVideoExtraData
+  * bacon: Delicious butter
+  * Revert "bacon: Disable 16-bit PCM offload for good"
 
