@@ -1,3 +1,23 @@
+android_packages_apps_Snap:
+  * Check photo orientation when creating thumbnail
+  * Update comment to reflect audio focus changes
+  * Release audio focus when video recording is done
+  * request audio focus before starting video recording
+  * Recording screen to be dynamic
+  * Fix the memory leak on view.
+  * Remove storage menu if no external storage available
+
+===============================================
+
+frameworks_base:
+  * frameworks/base: Support for third party NFC features
+  * Kill the real/isolated uid group, not the ApplicationInfo uid
+  * Dynamically enable MSB AGPS at runtime for newer baseband versions
+  * Backport of backup transport whitelist
+  * Don't pass URL path and username/password to PAC scripts
+
+===============================================
+
 caf_chromium_m46_build:
   * Fix color filter on FAB search icon
   * Rename data dir, migrate bookmarks and homepage
@@ -5,8 +25,24 @@ caf_chromium_m46_build:
   * Fix license markings
   * Migrate Default Search Engine Preference
   * Migrate Power Save Mode preferences
-  * Roll DEPS WebRefiner-2.1.8
-  * Roll DEPS swe-core 3.0.0
+  * Version code changes
+  * Configuration changes for crash server
+  * Fix WLAN Access point selection
+  * Package build info into SWE apk
+  * Remove BackgroundHtmlParser token limit
+  * Fix media control on notification
+  * Roll DEPS WebRefiner-2.1.9
+  * Download Enhancements QRD Feature
+  * Fix NullPointerException in NativePageFactory
+  * Remove browser restart when power save mode is toggled
+  * Added LASTCHANGE in swe/VERSION
+  * Fix Power Save mode never turning on
+  * Fix Edge Navigation consuming non-swipe touches
+  * Roll DEPS swe-core 3.0.1
+  * Fixed commented line support in swe commandline file
+  * Fix edge navigation state set to null
+  * Fix Privacy Meter Size
+  * Fixed crash reporting on java exception during JNI calls
 
 ===============================================
 
@@ -32,6 +68,107 @@ android_kernel_oneplus_msm8974:
   * ALSA: timer: Fix leak in events via snd_timer_user_tinterrupt
   * netfilter: x_tables: check for size overflow
   * ppp: take reference on channels netns
+  * bacon_defconfig: Set default I/O scheduler to Deadline
+  * USB: gadget: f_mtp: Check endpoints in MTP r/w nodes
+  * bacon_defconfig: Enable support for FiiO USB DAC
+  * USB: usbfs: fix potential infoleak in devio (CVE-2016-4482)
+  * mm, oom: base root bonus on current usage
+  * persistent_ram: check PERSISTENT_RAM_SIG before writing
+  * ASoC: msm: qdsp6v2: Add check for DSP status before using the size
+  * msm: mdss: fix possible out-of-bounds and overflow issue in mdp debugfs
+  * ASoC: msm: Add bounds checking to ADM get params
+  * msm: kgsl: Cast perfcounter query count to an unsigned int
+  * ASoC: msm: audio-effects: fix stack overread and heap overwrite
+  * ASoC: msm: disable unwanted module
+  * msm: kgsl: Add missing checks for alloc size and sglen
+  * ASoC: msm: audio-effects: improve logging 
+  * msm: camera: ispif: Validate VFE num input during reset
+  * mm, oom: make dump_tasks public
+  * mm: Add notifier framework for showing memory
+  * mm: vmpressure: allow in-kernel clients to subscribe for events
+  * memcg: add memory.pressure_level events
+  * lowmemorykiller: avoid false adaptive LMK triggers
+  * lowmemorykiller: Don't count swap cache pages twice
+  * lowmemorykiller: adapt to vmpressure
+  * lowmemorykiller: Do proper NULL checks
+  * lowmemorykiller: Run the lowmemory notifier when killing
+  * lowmemorykiller: Dump out slab state information
+  * lowmemorykiller: enhance debug information
+  * lowmemorykiller: make default lowmemorykiller debug message useful
+  * lowmemorykiller: Account for highmem during kswapd reclaim
+  * crypto: msm: qcrypto: Fix hash crash if not last issue
+  * crypto: msm: qcrypto: fix crash in _qcrypto_tfm_complete
+
+===============================================
+
+android_device_oppo_msm8974-common:
+  * bacon: Delicious butter
+  * Revert "bacon: Disable 16-bit PCM offload for good"
+  * bacon: Set I/O scheduler to Noop on early-init for primary eMMC device
+  * bacon: power: Configure performance profiles
+  * bacon: Don't override GPS SUPL version
+  * bacon: Sync sec_config with CAF LA.BF.1.1.3_rb1.13
+
+===============================================
+
+android_hardware_ril-caf:
+  * ril: Use CLOCK_BOOTTIME instead of CLOCK_MONOTONIC
+
+===============================================
+
+proprietary_vendor_oneplus:
+  * bacon: Remove unused blobs
+
+===============================================
+
+build:
+  * Updating security string patch to 2016-07-01
+
+===============================================
+
+android_system_core:
+  * Fix overflow in path building
+  * Fix scanf %s in lsof.
+
+===============================================
+
+platform/external/libvpx:
+  * external/libvpx/libwebm: Update snapshot
+  * Fix ParseElementHeader to support 0 payload elements
+
+===============================================
+
+frameworks_av:
+  * h264dec: check for overflows when calculating allocation size.
+  * Verify OMX buffer sizes prior to access
+  * Fix initialization of AAC presentation struct
+  * Check mp3 output buffer size
+  * codecs: check OMX buffer size before use in (gsm|g711)dec
+  * codecs: check OMX buffer size before use in (vorbis|opus)dec
+  * codecs: check OMX buffer size before use in (h263|h264)dec
+  * codecs: check OMX buffer size before use in (avc|hevc|mpeg2)dec
+  * Resolve merge conflict when cp'ing ag/931301 to mnc-mr1-release
+  * SampleTable.cpp: Fixed a regression caused by a fix for bug 28076789.
+  * AudioSource: initialize variables to prevent info leak
+  * h264bsdActivateParamSets: Prevent multiplication overflow.
+  * Fix security vulnerability in libstagefright
+  * MPEG4Extractor: ensure kKeyTrackID exists before creating an MPEG4Source as track.
+  * Resolve a merge issue between lmp and lmp-mr1+
+  * limit mediaserver memory
+  * Check malloc result to avoid NPD
+  * Clear unused pointer field when sending across binder
+
+===============================================
+
+android_hardware_qcom_media:
+  * mm-video-v4l2: venc: add safety checks for freeing buffers
+  * mm-video-v4l2: venc: Avoid processing ETBs/FTBs in invalid states
+
+===============================================
+
+android_hardware_qcom_audio:
+  * Replaced with the CyanogenMod one to get the PowerAmp Hi-Res Output working
+  * Fix AudioEffect reply overflow
 
 ===============================================
 
@@ -42,15 +179,61 @@ android_device_oneplus_bacon:
   * bacon: Add RAW and FAST path on primary output
   * Revert "bacon: Don't offload PCM formats"
   * Taking "Slimfy", Cortex 4.9 GCC and unused warnings suppress from SlimRoms instead of YoshiShaPow
+  * bacon: Remove command-line parameters used for debugging
 
 ===============================================
 
-android_hardware_ril-caf:
-  * ril: Use CLOCK_BOOTTIME instead of CLOCK_MONOTONIC
+android_external_sqlite:
+  * Upgrade SQLite to 3.13.0
 
 ===============================================
 
-android_device_oppo_msm8974-common:
-  * bacon: Delicious butter
-  * Revert "bacon: Disable 16-bit PCM offload for good"
+android_external_bluetooth_bluedroid:
+  * btif: check overflow on create_pbuf size
+  * Add guest mode functionality (2/3)
+
+===============================================
+
+android_external_libpng:
+  * Update libpng to 1.6.20
+
+===============================================
+
+frameworks_native:
+  * Correctly handle dup() failure in Parcel::readNativeHandle
+
+===============================================
+
+platform/external/tremolo:
+  * Check partword is in range for # of partitions and reformat tabs->spaces for readability.
+
+===============================================
+
+platform/dalvik:
+  * Fix potential buffer overrun.
+
+===============================================
+
+hardware_libhardware:
+  * Add guest mode functionality (1/3)
+
+===============================================
+
+android_packages_apps_Bluetooth:
+  * Add guest mode functionality (3/3)
+
+===============================================
+
+android_packages_apps_Nfc:
+  * Verify setForegroundDispatch caller is in foreground.
+
+===============================================
+
+android_external_sepolicy:
+  * Remove generic socket access from untrusted processes
+
+===============================================
+
+android_external_openssl:
+  * Fix encoding bug in i2c_ASN1_INTEGER
 
